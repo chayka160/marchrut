@@ -1,0 +1,156 @@
+
+    .steps-2-section {
+      padding: var(--space-section) clamp(24px, 4vw, 80px);
+      background:
+        radial-gradient(rgba(141, 115, 120, 0.14) 1px, transparent 1px);
+      background-size: 28px 28px;
+      position: relative;
+      overflow-x: clip;
+    }
+    .steps-2-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .steps-2-head {
+      max-width: 640px;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+    .steps-2-head .heading {
+      margin-bottom: 20px;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      hyphens: manual;
+    }
+    .steps-2-head p {
+      color: var(--muted);
+    }
+    .steps-2-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-width: 880px;
+      position: relative;
+    }
+    .steps-2-item {
+      position: relative;
+      padding: clamp(32px, 4vw, 56px) 0 clamp(32px, 4vw, 56px) clamp(72px, 9vw, 140px);
+      border-top: 1px solid rgba(141, 115, 120, 0.22);
+      min-width: 0;
+    }
+    .steps-2-item:last-child {
+      border-bottom: 1px solid rgba(141, 115, 120, 0.22);
+    }
+    /* connecting axis */
+    .steps-2-item::before {
+      content: "";
+      position: absolute;
+      left: clamp(26px, 3.6vw, 52px);
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(141, 115, 120, 0.28);
+    }
+    .steps-2-item:first-child::before { top: 50%; }
+    .steps-2-item:last-child::before { bottom: 50%; }
+    .steps-2-num {
+      position: absolute;
+      left: 0;
+      top: clamp(32px, 4vw, 56px);
+      width: clamp(52px, 7vw, 104px);
+      height: clamp(52px, 7vw, 104px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      border: 1px solid rgba(141, 115, 120, 0.22);
+      box-shadow: var(--shadow-card);
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.2vw, 32px);
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .steps-2-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.375rem, 2.6vw, 2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px 0;
+      word-break: keep-all;
+      overflow-wrap: normal;
+      hyphens: manual;
+    }
+    .steps-2-text {
+      color: var(--muted);
+      max-width: 52ch;
+      font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+    }
+    /* вход — легче, результат — весомее */
+    .steps-2-item--entry .steps-2-num {
+      background: transparent;
+      box-shadow: none;
+      border-style: dashed;
+      color: var(--muted);
+    }
+    .steps-2-item--result {
+      padding-top: clamp(40px, 5vw, 72px);
+      padding-bottom: clamp(40px, 5vw, 72px);
+    }
+    .steps-2-item--result .steps-2-num {
+      background: var(--accent);
+      color: var(--surface);
+      border-color: transparent;
+      box-shadow: var(--shadow-floating);
+      font-size: clamp(24px, 2.8vw, 40px);
+    }
+    .steps-2-item--result .steps-2-title {
+      font-size: clamp(1.625rem, 3.4vw, 2.75rem);
+    }
+    .steps-2-item--result .steps-2-title em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    .steps-2-cta {
+      margin-top: clamp(40px, 5vw, 64px);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .steps-2-cta .btn { min-height: 48px; }
+    .steps-2-note {
+      font-size: 13px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--muted);
+      word-break: keep-all;
+      overflow-wrap: normal;
+      hyphens: manual;
+    }
+    @media (max-width: 640px) {
+      .steps-2-item {
+        padding-left: 0;
+        padding-top: 84px;
+      }
+      .steps-2-item::before { display: none; }
+      .steps-2-num {
+        top: 0;
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+      }
+      .steps-2-item--result .steps-2-num { font-size: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .steps-2-section [data-animate] { transition: none; }
+    }
+    .steps-2-section :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: var(--radius-tight);
+    }
+  
